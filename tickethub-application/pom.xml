@@ -17,4 +17,16 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.tickethub</groupId>
+            <artifactId>tickethub-domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.tickethub</groupId>
+            <artifactId>tickethub-infrastructure</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>
