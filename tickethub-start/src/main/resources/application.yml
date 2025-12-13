@@ -1,2 +1,51 @@
 server:
   port: 1111
+
+spring:
+  application:
+    name: TicketHub
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/ticket?createDatabaseIfNotExist=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
+# JWT Configuration
+security:
+  jwt:
+    # Generate these keys using: echo -n 'your-secret-key' | base64
+    # For production, use strong random keys and store them securely
+    accessKey: ${JWT_ACCESS_KEY:YWNjZXNzLXNlY3JldC1rZXktZm9yLXRpY2tldGh1Yi1hcHBsaWNhdGlvbi12ZXJ5LXNlY3VyZS1rZXktMTIzNDU2}
+    refreshKey: ${JWT_REFRESH_KEY:cmVmcmVzaC1zZWNyZXQta2V5LWZvci10aWNrZXRodWItYXBwbGljYXRpb24tdmVyeS1zZWN1cmUta2V5LTEyMzQ1Ng==}
+    accessDuration: 1 # in days
+    refreshDuration: 7 # in days
+
+# Logging Configuration
+logging:
+  level:
+    org.tickethub: DEBUG
+    org.springframework.security: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+# SpringDoc OpenAPI Configuration
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    operationsSorter: method
+    tagsSorter: alpha
+    try-it-out-enabled: true
+  show-actuator: false
