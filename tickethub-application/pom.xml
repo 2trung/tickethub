@@ -17,4 +17,32 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <!-- MapStruct -->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+        </dependency>
+
+        <!-- Domain dependency -->
+        <dependency>
+            <groupId>org.tickethub</groupId>
+            <artifactId>tickethub-domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Infrastructure dependency -->
+        <dependency>
+            <groupId>org.tickethub</groupId>
+            <artifactId>tickethub-infrastructure</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
 </project>
